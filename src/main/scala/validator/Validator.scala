@@ -29,7 +29,7 @@ object Validator {
 
   def nonEmptyString(s: String)(fieldName: String): ValidatedNec[ValidationError, String] =
     if (s == "")
-      ValidationError(fieldName, "Must not be the emppty String").invalidNec
+      ValidationError(fieldName, "Must not be the empty String").invalidNec
     else
       s.valid
 
