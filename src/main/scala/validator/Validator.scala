@@ -3,8 +3,8 @@ package validator
 import cats.data.ValidatedNec
 import cats.syntax.validated._
 import error.ValidationError
-import model.{Address, Customer, Order}
-import validator.instances.{AddressValidator, CustomerValidator, OrderValidator}
+import model.{Address, Customer, Item, Order}
+import validator.instances.{AddressValidator, CustomerValidator, ItemValidator, OrderValidator}
 
 import scala.util.matching.Regex
 
@@ -26,6 +26,7 @@ object Validator {
   implicit val orderValidator: Validator[Order] = OrderValidator
   implicit val customerValidator: Validator[Customer] = CustomerValidator
   implicit val addressValidator: Validator[Address] = AddressValidator
+  implicit val itemValidator: Validator[Item] = ItemValidator
 
   def nonEmptyString(s: String)(fieldName: String): ValidatedNec[ValidationError, String] =
     if (s == "")

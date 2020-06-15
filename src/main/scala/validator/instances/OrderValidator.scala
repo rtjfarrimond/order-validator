@@ -12,7 +12,7 @@ object OrderValidator extends Validator[Order] {
   def validate(order: Order): ValidatedNec[ValidationError, Order] = {
     (
       customerValidator.validate(order.customer),
-      returnValid(order.items),
+      order.items.traverse(itemValidator.validate),
       returnValid(order.paymentDetails)
       ).mapN(Order)
   }
