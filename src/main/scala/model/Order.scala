@@ -6,5 +6,5 @@ case class Order(customer: Customer, items: List[Item], paymentDetails: PaymentD
 
 case class Item(uuid: UUID, name: String,  weightKg: Int, cost: Int, ageRestriction: Option[Int])
 
-case class PaymentDetails(accountHodler: String, accountNumber: String, sortCode: String)
+case class PaymentDetails(accountHolder: String, accountNumber: String, sortCode: String)
 
