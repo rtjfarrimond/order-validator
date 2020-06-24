@@ -6,10 +6,8 @@ Example project illustrating validation in Scala using the
 Project initialised using the [cats-seed.g8][cats-seed] template by
 [Underscore][underscore].
 
-## Dependencies
-
-- Java 8
-- [SBT][sbt]
+This is an [sbt][sbt] project that contains no main class, just a set of
+classes and objects with associated unit tests. To run the tests: `sbt test`
 
 
 [cats]: https://typelevel.org/cats/
