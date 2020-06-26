@@ -14,10 +14,6 @@ trait Validator[V] {
 
 object Validator {
 
-  def apply[V](implicit validator: Validator[V]): Validator[V] = validator
-
-  def validate[V: Validator](v: V): ValidatedNec[ValidationError, V] = Validator[V].validate(v)
-
   implicit class ValidatorOps[V](val v: V) {
     def validate(implicit validator: Validator[V]): ValidatedNec[ValidationError, V] =
       validator.validate(v)
